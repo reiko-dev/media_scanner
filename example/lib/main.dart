@@ -1,8 +1,6 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:media_scanner/media_scanner.dart';
 
 void main() {
   runApp(MyApp());
@@ -24,14 +22,14 @@ class _MyAppState extends State<MyApp> {
 
   // Platform messages are asynchronous, so we initialize in an async method.
   Future<void> initPlatformState() async {
-    String loadMediaMessage;
-    // Platform messages may fail, so we use a try/catch PlatformException.
-    try {
-      loadMediaMessage = await MediaScanner.loadMedia(
-          path: "/storage/emulated/0/Lazy W.A/LazyPhotos/coba.jpg");
-    } on PlatformException {
-      loadMediaMessage = 'Failed to get platform version.';
-    }
+    String loadMediaMessage = "";
+    // // Platform messages may fail, so we use a try/catch PlatformException.
+    // try {
+    //   loadMediaMessage = await MediaScanner.loadMedia(
+    //       path: "/storage/emulated/0/Lazy W.A/LazyPhotos/coba.jpg");
+    // } on PlatformException {
+    //   loadMediaMessage = 'Failed to get platform version.';
+    // }
 
     // If the widget was removed from the tree while the asynchronous platform
     // message was in flight, we want to discard the reply rather than calling
